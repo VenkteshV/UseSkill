@@ -1,0 +1,54 @@
+<div class="hero">
+	<div class="container">
+		<div class="row">
+			<div class="hero-heading">
+				Need Skilled Support ? <br/>
+				<div class = "circle">
+					<div class="countersize">
+						&nbsp{{numberOfSkills}} <br />
+					</div>
+					<div class = "spacing">
+						<font size="3">Skills<br>registered</font>
+					</div>
+				</div>	
+				Find them on UseSkill.
+				<p>Browse. Buy. Done. </p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<form method="post" action="/search">
+					<div class="input-group input-group-lg">
+						<input type="text" class="form-control" name="search_input" placeholder="What skills are you in need of ?">
+						<span class="input-group-btn">
+							<input type="submit" class="btn btn-success" value="Find Skills">
+						</span>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container section">
+	<h1>
+		Newest Skills
+	</h1>
+	<div class="row">
+		{{#each gigs}}
+		<div class="col-md-3">
+			<div class="gig-card">
+				<a href="/service_detail/{{ _id }}" class="noline"><img class="image-test" src="{{picture}}">
+				<h4>
+					{{ title }}
+				</h4>
+				<h3>
+					₹{{price}}
+				</h3>
+				</a>
+			</div>
+		</div>
+		{{/each}}
+
+	</div>
+</div>

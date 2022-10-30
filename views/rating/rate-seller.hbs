@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Rating for the service</title>
+  <link rel="stylesheet" href="/css/rating.css"/>
+
+</head>
+<body>
+  <div class="profile-card">
+
+      <form method = "post">
+            <div class="rating">
+               <h4> Quality Of Service </h4>
+                <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                <label for="star5" >☆</label>
+                <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                <label for="star4" >☆</label>
+                <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                <label for="star3" >☆</label>
+                <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                <label for="star2" >☆</label>
+                <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                <label for="star1" >☆</label>
+          </div>
+
+          <div class="rating">
+             <h4>Timely Delivery </h4>
+              <input id="time5" name="time" type="radio" value="5" class="radio-btn hide" />
+              <label for="time5" >☆</label>
+              <input id="time4" name="time" type="radio" value="4" class="radio-btn hide" />
+              <label for="time4" >☆</label>
+              <input id="time3" name="time" type="radio" value="3" class="radio-btn hide" />
+              <label for="time3" >☆</label>
+              <input id="time2" name="time" type="radio" value="2" class="radio-btn hide" />
+              <label for="time2" >☆</label>
+              <input id="time1" name="time" type="radio" value="1" class="radio-btn hide" />
+              <label for="time1" >☆</label>
+        </div>
+
+        <div class="rating">
+           <h4>Communication and response time </h4>
+            <input id="comm5" name="communication" type="radio" value="5" class="radio-btn hide" />
+            <label for="comm5" >☆</label>
+            <input id="comm4" name="communication" type="radio" value="4" class="radio-btn hide" />
+            <label for="comm4" >☆</label>
+            <input id="comm3" name="communication" type="radio" value="3" class="radio-btn hide" />
+            <label for="comm3" >☆</label>
+            <input id="comm2" name="communication" type="radio" value="2" class="radio-btn hide" />
+            <label for="comm2" >☆</label>
+            <input id="comm1" name="communication" type="radio" value="1" class="radio-btn hide" />
+            <label for="comm1" >☆</label>
+      </div>
+
+      <div class="feedback">
+        <h4>Private Feedback </h4>
+        <textarea name="private" maxlength="500"> </textarea>
+      </div>
+    <div class="feedback">
+      <h4>Private Feedback </h4>
+      <div class="checkbox">
+        <label><input type="checkbox" value="5">Buy Again</label>
+        </div>
+      <div class="checkbox">
+          <label><input type="checkbox" value="4">Recommend</label>
+        </div>
+      </div>
+          <button type="submit" class="btn btn-success btn-lg">Add rating</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</body>
+</html>

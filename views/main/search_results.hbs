@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 overview">
+      <form method="post" action="/search">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" name="search_input" placeholder="What are you searching?...">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-success" value="Find Gigs">
+          </span>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+  <hr />
+  <div class="container section">
+
+  {{#each content.hits}}
+  <div class="col-md-4">
+    <div class="gig-card">
+   <img class="image-test" src="{{picture}}">
+      <label>
+        <a href="/service_detail/{{ objectID }}">{{ title }} </a>
+      </label>
+      <br />
+        <label class="seller-name"> {{owner.name}} </label> <br />
+      <label style= "font-size: 13px;text-transform: capitalize;">
+        {{about}}
+      </label>
+      <br />
+      <label style= "font-size: 13px;">
+        {{subcategory.level}}
+      </label>
+      <br />
+      <label style= "color: green;">
+        ₹{{price}}
+      </label>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+</div>

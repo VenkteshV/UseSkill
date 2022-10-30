@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <div class="overview">
+        <h2 class="text-center">Shout out your Skills!</h2>
+        <br />
+        <div class="new-gig-card">
+          <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>Skill Title</label>
+              <input type="text" class="form-control" placeholder="I will do something" name="gig_title" required>
+
+            </div>
+
+            <div class="form-group">
+              <label>Base Price</label>
+              <input type="text" class="form-control" placeholder="₹300" name="gig_price" required>
+            </div>
+
+            <div class="form-group">
+              <label>Previous Work</label>
+              <input type="file" name="myimage" ></input>
+            </div>
+
+            <div class="form-group">
+              <label>Skill category</label>
+              <select id="category" class=" selectpicker form-control"  name="gig_category" required>
+                <option value="">Select Category</option>
+              {{#each categories}}
+                <option {{id}}>{{name}}</option>
+                {{/each}}
+              </select>
+
+            </div>
+
+            <div class="form-group sub-category">
+              <label>Sub category</label>
+              <select id ="sub_categories" class ="form-control" name="gig_sub_category" required>
+              <option value="">Select subcategory</option>
+              </select>
+            </div>
+
+            <div class="form-group level">
+              <label>Skill Level</label>
+              <select class=" selectpicker form-control" name="gig_level" required>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Expert</option>
+              </select>
+
+            </div>
+
+            <div class="form-group input-group-lg">
+              <label>Describe your Skill</label>
+              <input type="text" class="form-control" placeholder="I have lot of experience in..." name="gig_about">
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg">Add Skill</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/dropdown.js"></script>

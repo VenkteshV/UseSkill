@@ -1,0 +1,103 @@
+<div class="container">
+  <h1 class="text-center">Profile</h1>
+
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+          {{#if message }}
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{ message  }}
+          </div>
+          {{/if}}
+
+      <div class="overview">
+        <div class="profile-card">
+          <img class="img-circle" src=" {{user.photo}} "/>
+
+            <br />
+            <div class="new-gig-card">
+              <form method="post">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" placeholder="{{ user.name }}" name="name" >
+
+                </div>
+
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="{{ user.email }}" name="email" >
+                </div>
+                <div class="form-group">
+                  <div>
+                  <label>Languages Known</label>
+                  <label style="padding-left:70px;">Levels</label>
+                </div>
+                  <div class="input_fields_wrap">
+                  {{#if user.languages  }}
+                  {{#each user.languages}}
+                  <div><input type="text" class="textbox-height" name="languages[]" value="{{ data }}">&nbsp &nbsp
+                    <select class=" form-control language_level display_selected" name="level[]" value={{level}}>
+                      <option value = "Beginner">Beginner</option>
+                      <option value ="Intermediate">Intermediate</option>
+                      <option value ="Expert">Expert</option>
+                    </select>
+                    <a href="#" class="remove_field">Remove</a>
+                  </div>
+                  <br />
+                {{/each}}
+                {{else}}
+
+                <div><input type="text" name="languages[]" >
+                  <select class=" form-control language_level" name="level[]" required>
+                    <option value = "Beginner">Beginner</option>
+                    <option value ="Intermediate">Intermediate</option>
+                    <option value ="Expert">Expert</option>
+                  </select>
+                </div>
+                  {{/if}}
+              </div><br/>
+                <button class="add_field_button btn btn-info" style = "color: #fff;
+                  background-color: #5bc0de;
+                  border-color: #46b8da;">Add</button>
+            </div>
+
+            <div class="form-group">
+              <label>College</label>
+              <input type="text" class="form-control" placeholder="{{ user.college }}" name="college" >
+            </div>
+            <div class="form-group">
+              <label>Degree</label>
+              <input type="text" class="form-control" placeholder="{{ user.degree }}" name="degree" >
+            </div>
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" class="form-control" placeholder="{{ user.department }}" name="department" >
+            </div>
+            <div class="form-group">
+              <label>Year of Graduation</label>
+              <input type="text" class="form-control" placeholder="{{ user.year }}" name="year" >
+            </div>
+
+                <div class="form-group input-group-lg">
+                  <label>About</label>
+                  <input type="text" class="form-control" placeholder="{{ user.about }}" name="about">
+                </div>
+
+                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                {{#if message }}
+                 <a href="/add-new-gig" class="btn btn-success btn-lg">Add a new Skill</a>
+                 {{/if}}
+              </form>
+              <a href = "/generate-cert" class="btn btn-success btn-lg">Generate Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/addLanguages.js"> </script>

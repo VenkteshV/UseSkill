@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <div id="code"></div>
+      <div class="overview">
+        <input type="hidden" value="{{ gig._id }}" id="gig_id" />
+        <div class="template-card">
+          <div class="name">
+            <h2 class="h2-size">{{gig.title}}</h2>
+            <hr />
+            <img class="image-test" src="{{gig.picture}}">
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="overview">
+        <div class="about-card">
+          <div class="name">
+            <h2 class="h2-size">About gig</h2>
+            <hr />
+            <h4> {{ gig.about }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="overview">
+      <div class="order-card">
+        <div class="name">
+            {{#if_equals user._id gig.owner._id }}
+              <h3>₹{{ gig.price }} <br /> You are the owner of this skill</h3>
+              {{else}}
+          <h3>₹{{ gig.price }} Order Details</h3>
+          <a href="/checkout/single_package/{{gig._id }}" class="btn btn-success btn-lg">Proceed to order</a>
+          <button class="btn btn-success btn-lg space-left" id="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
+          {{/if_equals}}
+        </div>
+      </div>
+    </div>
+    <div class="overview">
+      <div class="profile-card" style = "width: 400px">
+        <div class="name">
+          <h2 class="h2-size">About Seller</h2>
+          <hr />
+            <img class="img-circle" src=" {{gig.owner.photo}} " style = "align : center"/>
+            <label class = 'seller-name'> {{gig.owner.name}} </label>
+            <label> {{gig.owner.about}} </label>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+</div>

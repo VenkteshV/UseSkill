@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-center">Manage Orders</h1>
+
+  <div class="row">
+    <div class="overview">
+      <div class="list-orders-card">
+        <div class="table-margin">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Gig</th>
+                <th>Price<th>
+                <th>Status</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {{#each orders}}
+              <tr>
+                <td><img class="order-image-my-gig" src="{{ gig.picture }}">
+                  <span>{{ gig.title }}</span>
+                </td>
+                <td>₹{{ gig.price }}</td>
+                <td><a href = "/kanban/{{gig._id}}/tasks/{{ _id }}" class="btn btn-warning">In progress</button></td>
+                <td><a href="/users/{{ buyer._id }}/orders/{{ _id }}" class="btn btn-primary">Chat with Seller</a></td>
+                <td><a href="/rating/{{gig._id}}" class="btn btn-primary">Rate the Seller</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="text-center">Skill Room</h1>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <div class="overview">
+        <div class="add-gig-card">
+          <p class="text-center" style="margin-top: 40px;">
+            <a href="/add-new-gig" class="btn btn-success btn-lg">Add new Skill</a>
+          </div>
+        </div>
+
+        <div class="overview">
+          <div class="list-orders-card">
+            <div class="table-margin">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Skill</th>
+                    <th>Title</th>
+                    <th>Sub Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each gigs}}
+                  <tr>
+                    <td><img class="order-image-my-gig" src="{{picture}}"></td>
+                    <td>{{title}}</td>
+                    <td>{{subcategory.data}}</td>
+                    <td> <span><a href="/edit-gig/{{_id}}" class="btn btn-info edit-skills" id="{{ _id }}">Edit</button></span></td>
+                    <td> <span><a href="/remove-skills/{{_id}}" class="btn btn-danger remove-skills" id="{{ _id }}">Remove</button></span></td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
